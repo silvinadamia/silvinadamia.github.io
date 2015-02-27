@@ -1,11 +1,33 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Silvina Damia</title>
+  <meta charset="utf-8">
+  <title>Superslides - A fullscreen slider for jQuery</title>
+  <link rel="stylesheet" href="stylesheets/superslides.css">
 </head>
 <body>
-<h2>Sitio en desarrollo - contacto: info@silvinadamia.com</h2>
+  <div id="slides">
+    <div class="slides-container">
+	  <img src="images/silvina2.jpg" alt="Cinelli" class=".preserve">
+      <img src="images/soldado.jpg"  alt="Surly">
+      <img src="images/silvina.jpg" alt="Cinelli">
+      
+	  <img src="images/soldado2.jpg" alt="Surly">
+    </div>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="javascripts/jquery.easing.1.3.js"></script>
+  <script src="javascripts/jquery.animate-enhanced.min.js"></script>
+  <script src="javascripts/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    $(function() {
+      $('#slides').superslides({
+        hashchange: true,
+		play: 4000,
+          pagination:false
+      });
+    });
+  </script>
 </body>
 </html>
