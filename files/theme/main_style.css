@@ -1895,3 +1895,7 @@ h2#wsite-com-product-title {
     padding-left: 0;
   }
 }
+
+.footer{
+  visibility: hidden;
+}
