@@ -11,7 +11,7 @@
 		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
 <link rel="stylesheet" type="text/css" href="http://cdn1.editmysite.com/editor/libraries/fancybox/fancybox.css?1234" />
 <link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/social-icons.css?buildtime=1234" media="screen,projection" />
-<link rel="stylesheet" type="text/css" href="files/main_style.css?1459993987" title="wsite-theme-css" />
+<link rel="stylesheet" type="text/css" href="files/main_style.css?1462127365" title="wsite-theme-css" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 
@@ -58,12 +58,12 @@ var STYLE_PREFIX = 'wsite';
 	(function(jQuery){
 		function initFlyouts(){
 			initPublishedFlyoutMenus(
-				[{"id":"763810272651570536","title":"Inicio","url":"index.html","target":""},{"id":"275198999635779900","title":"Bio","url":"bio.html","target":""},{"id":"254700041797948338","title":"Clases","url":"clases.html","target":""},{"id":"479877903633203282","title":"Creaciones","url":"creaciones.html","target":""},{"id":"807379343255114052","title":"Contacto","url":"contacto.html","target":""}],
+				[{"id":"763810272651570536","title":"Inicio","url":"index.html","target":"","nav_menu":false},{"id":"275198999635779900","title":"Bio","url":"bio.html","target":"","nav_menu":false},{"id":"254700041797948338","title":"Clases","url":"clases.html","target":"","nav_menu":false},{"id":"479877903633203282","title":"Creaciones","url":"creaciones.html","target":"","nav_menu":false},{"id":"300821562807830873","title":"Blog","url":"blog.html","target":"","nav_menu":false},{"id":"807379343255114052","title":"Contacto","url":"contacto.html","target":"","nav_menu":false}],
 				"254700041797948338",
 				'',
 				'active',
 				false,
-				{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-item-wrap\"\n\t>\n\t<a href=\"{{url}}\"\n\t\t{{#target}}target=\"{{target}}\"{{\/target}}\n\t\tclass=\"wsite-menu-item\"\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a href=\"{{url}}\"\n\t\t{{#target}}target=\"{{target}}\"{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+				{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nav_menu}}\n\t\t\thref=\"{{url}}\"\n\t\t{{\/nav_menu}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nav_menu}}\n\t\t\thref=\"{{url}}\"\n\t\t{{\/nav_menu}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
 				{}
 			)
 		}
@@ -92,33 +92,27 @@ var STYLE_PREFIX = 'wsite';
 
 </span></div>
           <div class="nav desktop-nav"><ul class="wsite-menu-default">
-		<li id="pg763810272651570536"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="index.html"
-				
+		<li id="pg763810272651570536" class="wsite-menu-item-wrap">
+			<a
+					href="index.html"
 				class="wsite-menu-item"
 				>
 				Inicio
 			</a>
 			
 		</li>
-		<li id="pg275198999635779900"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="bio.html"
-				
+		<li id="pg275198999635779900" class="wsite-menu-item-wrap">
+			<a
+					href="bio.html"
 				class="wsite-menu-item"
 				>
 				Bio
 			</a>
 			
 		</li>
-		<li id="active"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="clases.html"
-				
+		<li id="active" class="wsite-menu-item-wrap">
+			<a
+					href="clases.html"
 				class="wsite-menu-item"
 				>
 				Clases
@@ -128,8 +122,8 @@ var STYLE_PREFIX = 'wsite';
 		<li id="wsite-nav-394554851380370798"
 	class="wsite-menu-subitem-wrap "
 	>
-	<a href="entrenamiento.html"
-		
+	<a
+			href="entrenamiento.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -141,8 +135,8 @@ var STYLE_PREFIX = 'wsite';
 <li id="wsite-nav-774702690393917446"
 	class="wsite-menu-subitem-wrap "
 	>
-	<a href="danza.html"
-		
+	<a
+			href="danza.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -156,11 +150,9 @@ var STYLE_PREFIX = 'wsite';
 </div>
 
 		</li>
-		<li id="pg479877903633203282"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="creaciones.html"
-				
+		<li id="pg479877903633203282" class="wsite-menu-item-wrap">
+			<a
+					href="creaciones.html"
 				class="wsite-menu-item"
 				>
 				Creaciones
@@ -170,8 +162,8 @@ var STYLE_PREFIX = 'wsite';
 		<li id="wsite-nav-655972039320366374"
 	class="wsite-menu-subitem-wrap "
 	>
-	<a href="interprete.html"
-		
+	<a
+			href="interprete.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -183,8 +175,8 @@ var STYLE_PREFIX = 'wsite';
 <li id="wsite-nav-792851253688758806"
 	class="wsite-menu-subitem-wrap "
 	>
-	<a href="plantar-indicios.html"
-		
+	<a
+			href="plantar-indicios.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -198,11 +190,18 @@ var STYLE_PREFIX = 'wsite';
 </div>
 
 		</li>
-		<li id="pg807379343255114052"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="contacto.html"
-				
+		<li id="pg300821562807830873" class="wsite-menu-item-wrap">
+			<a
+					href="blog.html"
+				class="wsite-menu-item"
+				>
+				Blog
+			</a>
+			
+		</li>
+		<li id="pg807379343255114052" class="wsite-menu-item-wrap">
+			<a
+					href="contacto.html"
 				class="wsite-menu-item"
 				>
 				Contacto
@@ -298,33 +297,27 @@ var STYLE_PREFIX = 'wsite';
   </div><!-- /.wrapper -->
 
   <div id="navMobile" class="nav mobile-nav"><ul class="wsite-menu-default">
-		<li id="pg763810272651570536"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="index.html"
-				
+		<li id="pg763810272651570536" class="wsite-menu-item-wrap">
+			<a
+					href="index.html"
 				class="wsite-menu-item"
 				>
 				Inicio
 			</a>
 			
 		</li>
-		<li id="pg275198999635779900"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="bio.html"
-				
+		<li id="pg275198999635779900" class="wsite-menu-item-wrap">
+			<a
+					href="bio.html"
 				class="wsite-menu-item"
 				>
 				Bio
 			</a>
 			
 		</li>
-		<li id="active"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="clases.html"
-				
+		<li id="active" class="wsite-menu-item-wrap">
+			<a
+					href="clases.html"
 				class="wsite-menu-item"
 				>
 				Clases
@@ -334,8 +327,8 @@ var STYLE_PREFIX = 'wsite';
 		<li id="wsite-nav-394554851380370798"
 	class="wsite-menu-subitem-wrap "
 	>
-	<a href="entrenamiento.html"
-		
+	<a
+			href="entrenamiento.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -347,8 +340,8 @@ var STYLE_PREFIX = 'wsite';
 <li id="wsite-nav-774702690393917446"
 	class="wsite-menu-subitem-wrap "
 	>
-	<a href="danza.html"
-		
+	<a
+			href="danza.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -362,11 +355,9 @@ var STYLE_PREFIX = 'wsite';
 </div>
 
 		</li>
-		<li id="pg479877903633203282"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="creaciones.html"
-				
+		<li id="pg479877903633203282" class="wsite-menu-item-wrap">
+			<a
+					href="creaciones.html"
 				class="wsite-menu-item"
 				>
 				Creaciones
@@ -376,8 +367,8 @@ var STYLE_PREFIX = 'wsite';
 		<li id="wsite-nav-655972039320366374"
 	class="wsite-menu-subitem-wrap "
 	>
-	<a href="interprete.html"
-		
+	<a
+			href="interprete.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -389,8 +380,8 @@ var STYLE_PREFIX = 'wsite';
 <li id="wsite-nav-792851253688758806"
 	class="wsite-menu-subitem-wrap "
 	>
-	<a href="plantar-indicios.html"
-		
+	<a
+			href="plantar-indicios.html"
 		class="wsite-menu-subitem"
 		>
 		<span class="wsite-menu-title">
@@ -404,11 +395,18 @@ var STYLE_PREFIX = 'wsite';
 </div>
 
 		</li>
-		<li id="pg807379343255114052"
-			class="wsite-menu-item-wrap"
-			>
-			<a href="contacto.html"
-				
+		<li id="pg300821562807830873" class="wsite-menu-item-wrap">
+			<a
+					href="blog.html"
+				class="wsite-menu-item"
+				>
+				Blog
+			</a>
+			
+		</li>
+		<li id="pg807379343255114052" class="wsite-menu-item-wrap">
+			<a
+					href="contacto.html"
 				class="wsite-menu-item"
 				>
 				Contacto
